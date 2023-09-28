@@ -1,4 +1,5 @@
 :root {
+  all: unset;
   --primary-color: #1e3a8a;
   --secondary-color: grey;
   --success-color: #059669;
@@ -13,16 +14,24 @@
   --primary-ff: "Monserrat", sans-serif;
   --secondary-ff: "Poppins", sans-serif;
   --code-ff: "Courier New", Courier, monospace;
-  --title-fs: 67px;
-  --subtitle-fs: 51px;
-  --hOne-fs: 38px;
-  --hTwo-fs: 28px;
-  --hThree-fs: 21px;
-  --button-fs: 12px;
-  --body-fs: 16px;
-  --bold-fw: 900;
-  --semi-bold-fw: 700;
-  --medium-fw: 600;
+  --title-fs: 4.1875rem;
+  --subtitle-fs: 3.1875rem;
+  --hOne-fs: 2.375rem;
+  --hTwo-fs: 1.75rem;
+  --hThree-fs: 1.3125rem;
+  --button-fs: 0.75rem;
+  --body-fs: 1rem;
+  --bold-fw: 700;
+  --semi-bold-fw: 600;
+  --medium-fw: 500;
   --light-fw: 300;
+  --rounded: 4px;
+  --circled: 50%;
   /* --- add new keys in @/src/types/types.d.ts GlobalStylesKeys --- */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
