@@ -1,6 +1,6 @@
-import * as Shared from "../SharedInput.styles";
+import * as S from "./InputText.styles";
 
-export type InputTextProps = InputProps;
+export type InputTextProps = { isBlocked?: boolean } & InputProps;
 
 const InputText = (props: InputTextProps) => {
   const {
@@ -11,13 +11,13 @@ const InputText = (props: InputTextProps) => {
     label,
     isDisabled,
     isReadOnly,
+    isBlocked = false,
     onChange,
     onBlur,
     onFocus,
   } = props;
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    event.preventDefault();
     onChange && onChange(event.target.value);
   };
 
@@ -30,8 +30,9 @@ const InputText = (props: InputTextProps) => {
   };
 
   return (
-    <Shared.InputWrapper>
-      <Shared.Input
+    <S.InputTextWrapper isBlocked={isBlocked}>
+      {label && <S.InputTextLabel htmlFor={id}>{label}</S.InputTextLabel>}
+      <S.InputText
         id={id}
         name={name}
         type="text"
@@ -43,7 +44,7 @@ const InputText = (props: InputTextProps) => {
         onBlur={handleOnBlur}
         onFocus={handleOnFocus}
       />
-    </Shared.InputWrapper>
+    </S.InputTextWrapper>
   );
 };
 

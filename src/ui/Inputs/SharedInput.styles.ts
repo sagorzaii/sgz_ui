@@ -4,18 +4,19 @@ export const InputWrapper = styled.div`
   width: fit-content;
   display: flex;
   align-items: center;
+  margin: 5px 0px;
 `;
 
 export const Label = styled.label`
-  margin-left: 10px;
-  position: relative;
-  width: fit-content;
+  width: 100%;
+  max-width: 100px;
+  text-align: left;
 `;
 
 export const Input = styled.input`
   width: 100%;
-  height: 35px;
-  padding: 6px 12px;
+  padding: 12px;
+  margin: 5px 0px;
   border: 1px solid var(--secondary-color);
   border-radius: var(--rounded);
   color: var(--black);

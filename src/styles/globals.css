@@ -29,3 +29,9 @@
   --circled: 50%;
   /* --- add new keys in @/src/types/types.d.ts GlobalStylesKeys --- */
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
