@@ -48,7 +48,7 @@ type InputProps = {
   isRequired?: boolean;
   isReadOnly?: boolean;
   hasError?: boolean;
-  onChange?: (input: unknown) => unknown;
-  onBlur?: (input: unknown) => unknown;
-  onFocus?: (input: unknown) => unknown;
+  onChange?: (input: any) => any;
+  onBlur?: (input: any) => any;
+  onFocus?: (input: any) => any;
 };

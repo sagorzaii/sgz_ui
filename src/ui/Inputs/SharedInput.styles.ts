@@ -1,17 +1,15 @@
 import styled from "styled-components";
 
 export const InputWrapper = styled.div`
-  width: 100%;
+  width: fit-content;
   display: flex;
   align-items: center;
 `;
 
 export const Label = styled.label`
-  color: #7f8794;
-  margin: 0;
-  position: absolute;
-  transform: translate(14px, 13px);
-  transition: all 0.2s ease-out;
+  margin-left: 10px;
+  position: relative;
+  width: fit-content;
 `;
 
 export const Input = styled.input`
