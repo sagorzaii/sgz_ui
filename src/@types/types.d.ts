@@ -39,7 +39,6 @@ type BorderRadius = "squared" | "rounded" | "circled";
 type InputProps = {
   id?: string;
   name?: string;
-  type?: string;
   placeholder?: string;
   value?: string | number;
   label?: string;

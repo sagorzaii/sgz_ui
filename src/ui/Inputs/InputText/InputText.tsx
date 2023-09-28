@@ -6,7 +6,6 @@ const InputText = (props: InputTextProps) => {
   const {
     id,
     name,
-    type,
     placeholder,
     value,
     label,
@@ -35,7 +34,7 @@ const InputText = (props: InputTextProps) => {
       <Shared.Input
         id={id}
         name={name}
-        type={type}
+        type="text"
         value={value}
         placeholder={placeholder}
         disabled={isDisabled}
