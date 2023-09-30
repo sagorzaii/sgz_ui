@@ -12,13 +12,11 @@ interface ButtonCSSProps {
 export const ButtonWrapper = styled.button<ButtonCSSProps>`
   display: block;
   width: 100%;
-  max-width: 150px;
   height: 38px;
   background: linear-gradient(135deg, var(--light-grey), var(--bg-color));
   border: none;
   border-radius: var(--curved);
   padding: 10px 30px;
-  margin: 10px;
   box-shadow: 1px 1px 4px var(--shadow-color);
   transition: margin-right 4s ease-in-out 1s;
   cursor: pointer;
@@ -28,9 +26,10 @@ export const ButtonWrapper = styled.button<ButtonCSSProps>`
     text-align: center;
     font-weight: var(--bold-fw);
     font-size: var(--button-fs);
-    color: var(--white);
     color: ${(props) =>
-      props.buttonType === "primary" && getGlobalStyles("--secondary-color")};
+      props.buttonType === "primary"
+        ? getGlobalStyles("--secondary-color")
+        : getGlobalStyles("--white")};
   }
 
   /* background */
@@ -42,8 +41,8 @@ export const ButtonWrapper = styled.button<ButtonCSSProps>`
     props.buttonType === "success" && getGlobalStyles("--success-color")};
 
   /* size */
+  max-width: ${(props) => props.size === "sm" && "150px"};
   max-width: ${(props) => props.size === "md" && "350px"};
-  max-width: ${(props) => props.size === "bg" && "550px"};
 
   /* disabled */
   opacity: ${(props) => props.isDisabled === true && "0.5"};
@@ -60,7 +59,7 @@ export const ButtonWrapper = styled.button<ButtonCSSProps>`
   }
 
   &:hover {
-    background: linear-gradient(135deg, var(--light-grey), #eeeeeedf);
+    background: linear-gradient(135deg, var(--light-grey), #eeeeeeff);
     background: ${(props) =>
       props.buttonType === "danger" &&
       `linear-gradient(135deg, ${getGlobalStyles(
