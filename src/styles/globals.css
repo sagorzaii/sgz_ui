@@ -25,7 +25,7 @@
   --semi-bold-fw: 600;
   --medium-fw: 500;
   --light-fw: 300;
-  --rounded: 4px;
+  --curved: 4px;
   --circled: 50%;
   /* --- add new keys in @/src/types/types.d.ts GlobalStylesKeys --- */
 }
