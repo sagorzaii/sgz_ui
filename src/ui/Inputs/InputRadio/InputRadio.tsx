@@ -13,7 +13,7 @@ const InputRadio = (props: InputRadioProps) => {
     id,
     name,
     value,
-    checked = false,
+    checked,
     label,
     squared,
     isDisabled,
@@ -22,7 +22,7 @@ const InputRadio = (props: InputRadioProps) => {
   } = props;
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange && onChange(event);
+    if (onChange) onChange(event);
   };
 
   return (
