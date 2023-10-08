@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "sb": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "predeploy": "npm run build",
+    "build-storybook": "storybook build -o docs-build",
+    "predeploy": "npm run build-storybook",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
