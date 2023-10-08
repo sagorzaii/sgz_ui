@@ -11,8 +11,8 @@
   --white: #ffffff;
   --highlight: yellow;
   --shadow-color: rgba(0, 0, 0, 0.251);
-  --primary-ff: "Monserrat", sans-serif;
-  --secondary-ff: "Poppins", sans-serif;
+  --primary-ff: sans-serif;
+  --secondary-ff: serif;
   --code-ff: "Courier New", Courier, monospace;
   --title-fs: 4.1875rem;
   --subtitle-fs: 3.1875rem;
@@ -26,7 +26,7 @@
   --medium-fw: 500;
   --light-fw: 300;
   --curved: 4px;
-  --circled: 50%;
+  --circled: 50px;
   /* --- add new keys in @/src/types/types.d.ts GlobalStylesKeys --- */
 }
 

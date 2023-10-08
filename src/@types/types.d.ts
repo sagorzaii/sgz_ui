@@ -25,7 +25,7 @@ type GlobalStylesKeys =
   | "--semi-bold-fw"
   | "--medium-fw"
   | "--light-fw"
-  | " --rounded"
+  | "--curved"
   | "--circled";
 
 // UI Sizes
@@ -40,6 +40,7 @@ type InputProps = {
   id?: string;
   name?: string;
   placeholder?: string;
+  defaultValue?: string;
   value?: string | number;
   label?: string;
   size?: ExtendedUISizes;
