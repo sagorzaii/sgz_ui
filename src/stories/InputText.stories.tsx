@@ -22,6 +22,8 @@ export const InputTextWithLabel: Story = {
     defaultValue: "Hello World!",
     label: "With Label",
     borderRadius: "squared",
+    isDisabled: false,
+    isReadOnly: false,
   },
   render: (args) => (
     <InputTextComponent>
@@ -34,7 +36,10 @@ export const InputTextBlockWithLabel: Story = {
   args: {
     defaultValue: "Hello World!",
     label: "Blocked with Label",
+    placeholder: "",
     borderRadius: "rounded",
+    isDisabled: false,
+    isReadOnly: false,
   },
   render: (args) => (
     <InputTextComponent>
@@ -45,8 +50,12 @@ export const InputTextBlockWithLabel: Story = {
 
 export const InputTextWithPlaceholder: Story = {
   args: {
+    defaultValue: "",
+    label: "",
     placeholder: "without blocked & label",
     borderRadius: "circled",
+    isDisabled: false,
+    isReadOnly: false,
   },
   render: (args) => (
     <InputTextComponent>
