@@ -5,7 +5,7 @@ import InputRadio, {
 } from "../ui/Inputs/InputRadio/InputRadio";
 
 export default {
-  title: "components/Inputs",
+  title: "components/Inputs/InputRadio",
   component: InputRadio,
   tags: ["autodocs"],
 } as Meta<InputRadioProps>;
