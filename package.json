@@ -10,7 +10,7 @@
     "sb": "storybook dev -p 6006",
     "build-storybook": "storybook build -o docs-build",
     "predeploy": "npm run build-storybook",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d docs-build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
