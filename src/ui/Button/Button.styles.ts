@@ -13,7 +13,7 @@ export const ButtonWrapper = styled.button<ButtonCSSProps>`
   display: block;
   width: 100%;
   height: 38px;
-  background: linear-gradient(135deg, var(--light-grey), var(--bg-color));
+  background: linear-gradient(135deg, var(--light-grey), #eeeeeeff);
   border: none;
   border-radius: var(--curved);
   padding: 10px 30px;
@@ -59,7 +59,7 @@ export const ButtonWrapper = styled.button<ButtonCSSProps>`
   }
 
   &:hover {
-    background: linear-gradient(135deg, var(--light-grey), #eeeeeeff);
+    background: linear-gradient(135deg, var(--light-grey), #eaeaeaff);
     background: ${(props) =>
       props.buttonType === "danger" &&
       `linear-gradient(135deg, ${getGlobalStyles(
