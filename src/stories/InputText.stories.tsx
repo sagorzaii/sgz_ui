@@ -19,15 +19,18 @@ const InputTextComponent = ({ children }: any) => {
 
 export const InputTextWithLabel: Story = {
   args: {
-    defaultValue: "Hello World!",
+    defaultValue: "",
     label: "With Label",
     borderRadius: "squared",
     isDisabled: false,
     isReadOnly: false,
+    isBlocked: false,
+    maxLength: 10,
   },
   render: (args) => (
     <InputTextComponent>
       <InputText {...args} />
+      max length is 10
     </InputTextComponent>
   ),
 };
@@ -40,6 +43,7 @@ export const InputTextBlockWithLabel: Story = {
     borderRadius: "rounded",
     isDisabled: false,
     isReadOnly: false,
+    isBlocked: false,
   },
   render: (args) => (
     <InputTextComponent>
@@ -56,6 +60,7 @@ export const InputTextWithPlaceholder: Story = {
     borderRadius: "circled",
     isDisabled: false,
     isReadOnly: false,
+    isBlocked: false,
   },
   render: (args) => (
     <InputTextComponent>

@@ -1,6 +1,10 @@
 import * as S from "./InputText.styles";
 
-export type InputTextProps = { isBlocked?: boolean } & InputProps;
+export type InputTextProps = {
+  isBlocked?: boolean;
+  maxLength: number;
+  minLength?: number;
+} & InputProps;
 
 const InputText = (props: InputTextProps) => {
   const {
@@ -10,9 +14,11 @@ const InputText = (props: InputTextProps) => {
     defaultValue,
     value,
     label,
-    isDisabled,
-    isReadOnly,
+    isDisabled = false,
+    isReadOnly = false,
     isBlocked = false,
+    maxLength,
+    minLength,
     borderRadius = "squared",
     onChange,
     onBlur,
@@ -47,7 +53,10 @@ const InputText = (props: InputTextProps) => {
         value={value}
         placeholder={placeholder}
         disabled={isDisabled}
+        isDisabled={isDisabled}
         readOnly={isReadOnly}
+        maxLength={maxLength}
+        minLength={minLength}
         borderRadius={borderRadius}
         onChange={handleOnChange}
         onBlur={handleOnBlur}
