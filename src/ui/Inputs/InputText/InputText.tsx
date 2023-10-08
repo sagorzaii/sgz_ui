@@ -1,45 +1,63 @@
 import * as S from "./InputText.styles";
 
-export type InputTextProps = { isBlocked?: boolean } & InputProps;
+export type InputTextProps = {
+  isBlocked?: boolean;
+  maxLength: number;
+  minLength?: number;
+} & InputProps;
 
 const InputText = (props: InputTextProps) => {
   const {
     id,
     name,
     placeholder,
+    defaultValue,
     value,
     label,
-    isDisabled,
-    isReadOnly,
+    isDisabled = false,
+    isReadOnly = false,
     isBlocked = false,
+    maxLength,
+    minLength,
+    borderRadius = "squared",
     onChange,
     onBlur,
     onFocus,
   } = props;
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange && onChange(event.target.value);
+    if (onChange) onChange(event.target.value);
   };
 
   const handleOnBlur = (event: React.FocusEvent<HTMLInputElement>) => {
-    onBlur && onBlur(event.target.value);
+    if (onBlur) onBlur(event.target.value);
   };
 
   const handleOnFocus = (event: React.FocusEvent<HTMLInputElement>) => {
-    onFocus && onFocus(event.target.value);
+    if (onFocus) onFocus(event.target.value);
   };
 
   return (
     <S.InputTextWrapper isBlocked={isBlocked}>
-      {label && <S.InputTextLabel htmlFor={id}>{label}</S.InputTextLabel>}
+      {label && (
+        <S.InputTextLabel htmlFor={id}>
+          {label}
+          {` :`}
+        </S.InputTextLabel>
+      )}
       <S.InputText
         id={id}
         name={name}
         type="text"
+        defaultValue={defaultValue}
         value={value}
         placeholder={placeholder}
         disabled={isDisabled}
+        isDisabled={isDisabled}
         readOnly={isReadOnly}
+        maxLength={maxLength}
+        minLength={minLength}
+        borderRadius={borderRadius}
         onChange={handleOnChange}
         onBlur={handleOnBlur}
         onFocus={handleOnFocus}

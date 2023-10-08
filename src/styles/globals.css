@@ -1,7 +1,7 @@
 :root {
   all: unset;
   --primary-color: #1e3a8a;
-  --secondary-color: grey;
+  --secondary-color: #666;
   --success-color: #059669;
   --warning-color: #fcd34d;
   --error-color: #dc2626;
@@ -10,9 +10,9 @@
   --light-grey: #eee;
   --white: #ffffff;
   --highlight: yellow;
-  --shadow-color: rgba(0, 0, 0, 0.25);
-  --primary-ff: "Monserrat", sans-serif;
-  --secondary-ff: "Poppins", sans-serif;
+  --shadow-color: rgba(0, 0, 0, 0.251);
+  --primary-ff: sans-serif;
+  --secondary-ff: serif;
   --code-ff: "Courier New", Courier, monospace;
   --title-fs: 4.1875rem;
   --subtitle-fs: 3.1875rem;
@@ -25,8 +25,8 @@
   --semi-bold-fw: 600;
   --medium-fw: 500;
   --light-fw: 300;
-  --rounded: 4px;
-  --circled: 50%;
+  --curved: 4px;
+  --circled: 50px;
   /* --- add new keys in @/src/types/types.d.ts GlobalStylesKeys --- */
 }
 
@@ -34,4 +34,5 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
 }
