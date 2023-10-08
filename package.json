@@ -1,13 +1,16 @@
 {
   "name": "sgz_ui",
   "version": "0.1.0",
+  "homepage": "https://sagorzaii.github.io/sgz_ui",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "sb": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -34,6 +37,7 @@
     "@storybook/react": "^7.0.18",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/styled-components": "^5.1.26",
+    "gh-pages": "^6.0.0",
     "storybook": "^7.0.18"
   }
 }
