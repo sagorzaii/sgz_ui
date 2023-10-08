@@ -28,6 +28,7 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   width: 100%;
+  height: 35px;
   padding: 12px;
   margin: 5px 0px;
   border: 1px solid var(--secondary-color);
