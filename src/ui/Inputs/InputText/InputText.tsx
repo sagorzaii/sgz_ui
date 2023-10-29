@@ -39,12 +39,7 @@ const InputText = (props: InputTextProps) => {
 
   return (
     <S.InputTextWrapper isBlocked={isBlocked}>
-      {label && (
-        <S.InputTextLabel htmlFor={id}>
-          {label}
-          {` :`}
-        </S.InputTextLabel>
-      )}
+      {label && <S.InputTextLabel htmlFor={id}>{label}</S.InputTextLabel>}
       <S.InputText
         id={id}
         name={name}
