@@ -47,6 +47,7 @@ export const Switch = styled.span<{ isDisabled: boolean }>`
     left: 4px;
     bottom: 4px;
     background-color: var(--white);
+    box-shadow: 0.5px 0.5px 1px var(--shadow-color);
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border-radius: 50%;
