@@ -7,6 +7,7 @@ export interface ButtonProps {
   size?: "sm" | "md" | "bg";
   border?: "squared" | "curved" | "rounded";
   icon?: any;
+  isOutline?: boolean;
   isDisabled?: boolean;
   onClick?: () => void;
 }
@@ -18,6 +19,7 @@ const Button = (props: ButtonProps) => {
     size = "bg",
     border = "curved",
     icon,
+    isOutline = false,
     isDisabled = false,
   } = props;
 
@@ -25,6 +27,7 @@ const Button = (props: ButtonProps) => {
     <ButtonWrapper
       buttonType={type}
       size={size}
+      isOutline={isOutline}
       isDisabled={isDisabled}
       aria-disabled={isDisabled}
       border={border}
