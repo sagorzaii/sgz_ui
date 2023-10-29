@@ -1,19 +1,133 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { getGlobalStyles } from "../../utils/getGlobalCSS";
 const style = getComputedStyle(document.body);
 
 interface ButtonCSSProps {
   buttonType: "primary" | "success" | "danger" | "warning";
   size?: "sm" | "md" | "bg";
+  isOutline?: boolean;
   border?: "squared" | "curved" | "rounded";
   isDisabled?: boolean;
 }
+
+const getOutlineColor = (style?: string) => {
+  switch (style) {
+    case "success":
+      return css`
+        border: 1px solid ${getGlobalStyles("--success-color")};
+        background-color: var(--white);
+      `;
+    case "danger":
+      return css`
+        border: 1px solid ${getGlobalStyles("--error-color")};
+        background-color: var(--white);
+      `;
+    case "warning":
+      return css`
+        border: 1px solid ${getGlobalStyles("--warning-color")};
+        background-color: var(--white);
+      `;
+    case "primary":
+      return css`
+        border: 1px solid ${getGlobalStyles("--primary-color")};
+        background-color: var(--white);
+      `;
+    default:
+      break;
+  }
+};
+
+const getBackgroundColor = (style?: string, isOutline?: boolean) => {
+  if (isOutline) return getOutlineColor(style);
+  else {
+    switch (style) {
+      case "success":
+        return css`
+          background: ${getGlobalStyles("--success-color")};
+        `;
+      case "danger":
+        return css`
+          background: ${getGlobalStyles("--error-color")};
+        `;
+      case "warning":
+        return css`
+          background: ${getGlobalStyles("--warning-color")};
+        `;
+      case "primary":
+        return css`
+          background: ${getGlobalStyles("--primary-color")};
+        `;
+      default:
+        return css`
+          background: linear-gradient(135deg, var(--light-grey), #eeeeeeff);
+        `;
+    }
+  }
+};
+
+const getLabelColor = (style?: string, isOutline?: boolean) => {
+  if (isOutline) {
+    switch (style) {
+      case "success":
+        return getGlobalStyles("--success-color");
+      case "danger":
+        return getGlobalStyles("--error-color");
+      case "warning":
+        return getGlobalStyles("--warning-color");
+      case "primary":
+        return getGlobalStyles("--primary-color");
+      default:
+        return getGlobalStyles("--white");
+    }
+  }
+  return getGlobalStyles("--white");
+};
+
+const getHoveredBackgroundColor = (style?: string) => {
+  switch (style) {
+    case "success":
+      return css`
+        background: linear-gradient(
+          135deg,
+          ${getGlobalStyles("--success-color")},
+          #059669df
+        );
+      `;
+    case "danger":
+      return css`
+        background: linear-gradient(
+          135deg,
+          ${getGlobalStyles("--error-color")},
+          #dc2626df
+        );
+      `;
+    case "warning":
+      return css`
+        background: linear-gradient(
+          135deg,
+          ${getGlobalStyles("--warning-color")},
+          #fcd34ddf
+        );
+      `;
+    case "primary":
+      return css`
+        background: linear-gradient(
+          135deg,
+          ${getGlobalStyles("--primary-color")},
+          #1e3a8adf
+        );
+      `;
+    default:
+      return css`
+        background: linear-gradient(135deg, var(--light-grey), #eaeaeaff);
+      `;
+  }
+};
 
 export const ButtonWrapper = styled.button<ButtonCSSProps>`
   display: block;
   width: 100%;
   height: 38px;
-  background: linear-gradient(135deg, var(--light-grey), #eeeeeeff);
   border: none;
   border-radius: var(--curved);
   padding: 10px 30px;
@@ -26,19 +140,11 @@ export const ButtonWrapper = styled.button<ButtonCSSProps>`
     text-align: center;
     font-weight: var(--bold-fw);
     font-size: var(--button-fs);
-    color: ${(props) =>
-      props.buttonType === "primary"
-        ? getGlobalStyles("--secondary-color")
-        : getGlobalStyles("--white")};
+    color: ${(props) => getLabelColor(props.buttonType, props.isOutline)};
   }
 
   /* background */
-  background: ${(props) =>
-    props.buttonType === "danger" && getGlobalStyles("--error-color")};
-  background: ${(props) =>
-    props.buttonType === "warning" && getGlobalStyles("--warning-color")};
-  background: ${(props) =>
-    props.buttonType === "success" && getGlobalStyles("--success-color")};
+  ${(props) => getBackgroundColor(props.buttonType, props.isOutline)}
 
   /* size */
   max-width: ${(props) => props.size === "sm" && "150px"};
@@ -53,27 +159,15 @@ export const ButtonWrapper = styled.button<ButtonCSSProps>`
   border-radius: ${(props) => props.border === "rounded" && "50px"};
   border-radius: ${(props) => props.border === "squared" && "unset"};
 
-  &:hover header {
+  /* &:hover header {
     color: ${(props) =>
-      props.buttonType != "primary" && getGlobalStyles("--white")};
-  }
+    props.buttonType != "primary" && getGlobalStyles("--white")};
+  } */
 
   &:hover {
-    background: linear-gradient(135deg, var(--light-grey), #eaeaeaff);
-    background: ${(props) =>
-      props.buttonType === "danger" &&
-      `linear-gradient(135deg, ${getGlobalStyles(
-        "--error-color"
-      )}, #dc2626df)`};
-    background: ${(props) =>
-      props.buttonType === "warning" &&
-      `linear-gradient(135deg, ${getGlobalStyles(
-        "--warning-color"
-      )}, #fcd34ddf)`};
-    background: ${(props) =>
-      props.buttonType === "success" &&
-      `linear-gradient(135deg, ${getGlobalStyles(
-        "--success-color"
-      )}, #059669df)`};
+    ${(props) => getHoveredBackgroundColor(props.buttonType)}
+  }
+  &:hover > header {
+    color: ${(props) => getLabelColor(props.buttonType)};
   }
 `;
