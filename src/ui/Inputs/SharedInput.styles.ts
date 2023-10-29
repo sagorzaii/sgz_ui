@@ -26,6 +26,9 @@ export const Label = styled.label`
   margin: 0px 5px;
   text-align: left;
   overflow-wrap: break-word;
+  color: var(--secondary-color);
+  font-size: var(--label-fs);
+  font-weight: var(--semi-bold-fw);
 `;
 
 export const Input = styled.input`
