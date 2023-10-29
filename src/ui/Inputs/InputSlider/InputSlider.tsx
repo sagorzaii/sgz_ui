@@ -30,8 +30,27 @@ const InputSlider = (props: InputSliderProps) => {
     color,
     direction,
   } = props;
+
+  if (direction === "vertical")
+    return (
+      <S.InputSliderWrapper direction={direction}>
+        {rightLabel && <S.RightSliderLabel>{rightLabel}</S.RightSliderLabel>}
+        <S.Slider
+          id={id}
+          name={name}
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          color={color}
+          direction={direction}
+        />
+        {leftLabel && <S.LeftSliderLabel>{leftLabel}</S.LeftSliderLabel>}
+      </S.InputSliderWrapper>
+    );
+
   return (
-    <S.InputSliderWrapper>
+    <S.InputSliderWrapper direction={direction}>
       {leftLabel && <S.LeftSliderLabel>{leftLabel}</S.LeftSliderLabel>}
       <S.Slider
         id={id}

@@ -11,14 +11,25 @@ export default {
 
 type Story = StoryObj<InputSliderProps>;
 
-export const Slider: Story = {
+export const NormalSlider: Story = {
   args: {
     leftLabel: "0",
     rightLabel: "1000",
     max: "1000",
     min: "0",
     step: "10",
-    // direction: "vertical",
+  },
+  render: (args) => <InputSlider {...args} />,
+};
+
+export const VerticalSlider: Story = {
+  args: {
+    leftLabel: "0",
+    rightLabel: "1000",
+    max: "1000",
+    min: "0",
+    step: "10",
+    direction: "vertical",
   },
   render: (args) => <InputSlider {...args} />,
 };
