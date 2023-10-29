@@ -19,8 +19,12 @@ export const InputText = styled(Input)<{
   border-radius: ${(p) => getBorderRadius(p.borderRadius)};
   background: #fafafa;
   border: 0.2px solid var(--light-grey);
-  box-shadow: 0.2px 0.2px var(--secondary-color);
   ${(p) => p.isDisabled && DisabledState}
+
+  :focus {
+    border-color: var(--primary-color);
+    background: var(--white);
+  }
 `;
 
 export const InputTextLabel = styled(Label)`
