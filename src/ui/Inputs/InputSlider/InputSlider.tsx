@@ -6,9 +6,9 @@ export type InputSliderProps = {
   leftIcon?: IconProp;
   rightLabel?: string;
   rightIcon?: IconProp;
-  max?: number;
-  min?: number;
-  step?: number;
+  max?: string;
+  min?: string;
+  step?: string;
   color?: string;
 } & Omit<
   InputProps,
@@ -26,7 +26,7 @@ const InputSlider = (props: InputSliderProps) => {
     max = "10",
     min = "0",
     step = "1",
-    defaultValue = "5",
+    color,
   } = props;
   return (
     <S.InputSliderWrapper>
@@ -38,7 +38,7 @@ const InputSlider = (props: InputSliderProps) => {
         min={min}
         max={max}
         step={step}
-        // value={defaultValue}
+        color={color}
       />
       {rightLabel && <S.RightSliderLabel>{rightLabel}</S.RightSliderLabel>}
     </S.InputSliderWrapper>
