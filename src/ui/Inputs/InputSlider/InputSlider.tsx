@@ -10,6 +10,7 @@ export type InputSliderProps = {
   min?: string;
   step?: string;
   color?: string;
+  direction?: "horizontal" | "vertical";
 } & Omit<
   InputProps,
   "placeholder" | "value" | "label" | "size" | "borderRadius"
@@ -27,6 +28,7 @@ const InputSlider = (props: InputSliderProps) => {
     min = "0",
     step = "1",
     color,
+    direction,
   } = props;
   return (
     <S.InputSliderWrapper>
@@ -39,6 +41,7 @@ const InputSlider = (props: InputSliderProps) => {
         max={max}
         step={step}
         color={color}
+        direction={direction}
       />
       {rightLabel && <S.RightSliderLabel>{rightLabel}</S.RightSliderLabel>}
     </S.InputSliderWrapper>

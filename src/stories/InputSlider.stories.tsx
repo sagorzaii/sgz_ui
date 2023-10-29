@@ -18,6 +18,7 @@ export const Slider: Story = {
     max: "1000",
     min: "0",
     step: "10",
+    // direction: "vertical",
   },
   render: (args) => <InputSlider {...args} />,
 };
