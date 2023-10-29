@@ -15,22 +15,22 @@ const getOutlineColor = (style?: string) => {
     case "success":
       return css`
         border: 1px solid ${getGlobalStyles("--success-color")};
-        background-color: var(--white);
+        background-color: var(--bg-color);
       `;
     case "danger":
       return css`
         border: 1px solid ${getGlobalStyles("--error-color")};
-        background-color: var(--white);
+        background-color: var(--bg-color);
       `;
     case "warning":
       return css`
         border: 1px solid ${getGlobalStyles("--warning-color")};
-        background-color: var(--white);
+        background-color: var(--bg-color);
       `;
     case "primary":
       return css`
         border: 1px solid ${getGlobalStyles("--primary-color")};
-        background-color: var(--white);
+        background-color: var(--bg-color);
       `;
     default:
       break;
@@ -131,7 +131,7 @@ export const ButtonWrapper = styled.button<ButtonCSSProps>`
   border: none;
   border-radius: var(--curved);
   padding: 10px 30px;
-  box-shadow: 1px 1px 4px var(--shadow-color);
+  box-shadow: 1px 1px 2px var(--shadow-color);
   transition: margin-right 4s ease-in-out 1s;
   cursor: pointer;
 
