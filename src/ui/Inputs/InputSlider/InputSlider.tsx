@@ -23,10 +23,10 @@ const InputSlider = (props: InputSliderProps) => {
     leftIcon,
     rightLabel,
     rightIcon,
-    max = 100,
-    min = 0,
-    step = 1,
-    defaultValue,
+    max = "10",
+    min = "0",
+    step = "1",
+    defaultValue = "5",
   } = props;
   return (
     <S.InputSliderWrapper>
@@ -37,6 +37,7 @@ const InputSlider = (props: InputSliderProps) => {
         min={min}
         max={max}
         step={step}
+        // value={defaultValue}
       />
     </S.InputSliderWrapper>
   );

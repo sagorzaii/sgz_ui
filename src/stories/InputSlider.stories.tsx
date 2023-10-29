@@ -1,12 +1,17 @@
-import InputSlider from "../ui/Inputs/InputSlider/InputSlider";
+import { Meta, StoryObj } from "@storybook/react";
+import InputSlider, {
+  InputSliderProps,
+} from "../ui/Inputs/InputSlider/InputSlider";
 
 export default {
   title: "components/Inputs/InputSlider",
   component: InputSlider,
   tags: ["autodocs"],
-};
+} as Meta<InputSliderProps>;
 
-export const Slider = {
+type Story = StoryObj<InputSliderProps>;
+
+export const Slider: Story = {
   args: {},
-  render: () => <InputSlider />,
+  render: (args) => <InputSlider {...args} />,
 };

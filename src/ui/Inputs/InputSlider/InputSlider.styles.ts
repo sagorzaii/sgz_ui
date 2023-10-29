@@ -6,5 +6,8 @@ export const InputSliderWrapper = styled(InputWrapper)`
 `;
 
 export const Slider = styled(Input)`
+  width: 100%;
+  padding: 0;
   accent-color: black;
+  cursor: grab;
 `;
