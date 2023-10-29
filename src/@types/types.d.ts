@@ -20,6 +20,7 @@ type GlobalStylesKeys =
   | "--hTwo-fs"
   | "--hThree-fs"
   | "--button-fs"
+  | "--label-fs"
   | "--body-fs"
   | "--bold-fw"
   | "--semi-bold-fw"

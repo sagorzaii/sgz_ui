@@ -21,9 +21,14 @@ export const InputWrapper = styled.div`
 `;
 
 export const Label = styled.label`
-  width: 100%;
+  width: fit-content;
   max-width: 100px;
+  margin: 0px 5px;
   text-align: left;
+  overflow-wrap: break-word;
+  color: var(--secondary-color);
+  font-size: var(--label-fs);
+  font-weight: var(--semi-bold-fw);
 `;
 
 export const Input = styled.input`
