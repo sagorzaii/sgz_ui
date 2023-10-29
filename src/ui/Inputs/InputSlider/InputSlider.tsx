@@ -2,7 +2,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import * as S from "./InputSlider.styles";
 
 export type InputSliderProps = {
-  leftLabel: string;
+  leftLabel?: string;
   leftIcon?: IconProp;
   rightLabel?: string;
   rightIcon?: IconProp;
@@ -30,6 +30,7 @@ const InputSlider = (props: InputSliderProps) => {
   } = props;
   return (
     <S.InputSliderWrapper>
+      {leftLabel && <S.LeftSliderLabel>{leftLabel}</S.LeftSliderLabel>}
       <S.Slider
         id={id}
         name={name}
@@ -39,6 +40,7 @@ const InputSlider = (props: InputSliderProps) => {
         step={step}
         // value={defaultValue}
       />
+      {rightLabel && <S.RightSliderLabel>{rightLabel}</S.RightSliderLabel>}
     </S.InputSliderWrapper>
   );
 };

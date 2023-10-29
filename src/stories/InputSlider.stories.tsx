@@ -12,6 +12,9 @@ export default {
 type Story = StoryObj<InputSliderProps>;
 
 export const Slider: Story = {
-  args: {},
+  args: {
+    leftLabel: "0",
+    rightLabel: "1000",
+  },
   render: (args) => <InputSlider {...args} />,
 };
